@@ -1,15 +1,4 @@
-local VirtualInputManager = game:GetService("VirtualInputManager")
-
--- Di chuyển chuột đến vị trí (500, 300)
-VirtualInputManager:SendMouseMoveEvent(500, 300, game)
-wait(0.1)
-
--- Click chuột trái tại vị trí (500, 300)
-VirtualInputManager:SendMouseButtonEvent(500, 300, 0, true, game, 1) 
-wait(0.1)
-VirtualInputManager:SendMouseButtonEvent(500, 300, 0, false, game, 1)
-
--- Nhấn vào màn hình (Giả lập chạm màn hình)
-VirtualInputManager:SendTouchEvent(500, 300, 0, true, game, 1) -- Chạm
-wait(0.1)
-VirtualInputManager:SendTouchEvent(500, 300, 0, false, game, 1) -- Nhả
+while true do
+    wait(0.1) -- Đợi 0.1 giây để tránh spam quá nhanh
+    game:GetService("ReplicatedStorage").Remotes.Click:FireServer()
+end
